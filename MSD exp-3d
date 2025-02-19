@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Movie Tickets</title>
+    <script>
+        function bookTickets() {
+            const seats = parseInt(document.getElementById('seats').value);
+            const ticketPrice = 150;
+            let totalPrice = 0;
+
+            // Conditions for booking tickets
+            if (seats <= 2) {
+                totalPrice = seats * ticketPrice;
+                document.getElementById('result').innerText = `Total price for ${seats} seats is Rs. ${totalPrice}.`;
+            } else if (seats >= 6) {
+                document.getElementById('result').innerText = 'Booking not allowed for 6 or more seats.';
+            } else {
+                totalPrice = seats * ticketPrice;
+                document.getElementById('result').innerText = `Total price for ${seats} seats is Rs. ${totalPrice}.`;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Book Movie Tickets</h1>
+    <label for="seats">Number of seats:</label>
+    <input type="number" id="seats" name="seats" min="1">
+    <button onclick="bookTickets()">Book</button>
+    <p id="result"></p>
+</body>
+</html>
